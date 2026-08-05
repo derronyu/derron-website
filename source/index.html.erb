@@ -1,23 +1,77 @@
 ---
-title: Derron Yu – Welcome To My Website!
-heading: About Me
+title: Derron Yu — Finance and Research
 body_class: home
 ---
 
-<article class="entry home-entry">
-  <figure class="portrait">
-    <img src="<%= site_path("/images/derron-yu.jpg") %>" width="1000" height="1000" alt="">
-    <figcaption>
-      <p>Hi, I’m Derron Yu, a <strong>Master of Finance candidate at the Rotman School of Management</strong> with a passion for <strong>markets, sustainable finance, and data-driven decision-making</strong>. My background in <strong>Economics, International Relations, and Statistics</strong> gives me a unique perspective on how financial systems connect to global trends, policy, and sustainability.</p>
-      <p>Previously, as a <strong>Financial Analyst at University Health Network (UHN)</strong>, I managed multi-million-dollar research grants and clinical trial budgets, working closely with stakeholders to ensure financial sustainability in healthcare research.<br>Beyond finance, I’m a firm believer in using capital to drive <strong>sustainable and impactful change</strong>. I’ve competed in <strong>business case competitions</strong> focused on ESG and impact investing, consulted for sustainability-focused organizations, and co-founded a <strong>mental health nonprofit</strong> during the pandemic as part of a Harvard-led initiative.</p>
-      <p>I’m always up for a conversation about <strong>markets, trading strategies, sustainable finance, or just great movies and thrifting finds.</strong></p>
-      <p>Through my website, I hope you’ll be able to understand my skill set, diverse set of work experiences, and passion for a variety of fields including finance, sustainability, sports business, economics and gaming! Feel free to reach out through my various social media and professional platforms.</p>
-    </figcaption>
-  </figure>
+<section class="home-hero site-shell">
+  <div class="home-hero__copy">
+    <h1>I make complex <span class="home-hero__contrast">decisions clearer.</span></h1>
+    <p>I’m Derron Yu, a Master of Finance graduate of the Rotman School of Management working across investment strategy, markets, policy, and sustainable growth.</p>
+    <div class="home-hero__links">
+      <a href="<%= site_path("/case-competitions/") %>">View my work</a>
+      <a href="mailto:derron-nis@hotmail.com">Email me</a>
+    </div>
+  </div>
 
-  <ul class="social-links" aria-label="Social links">
-    <li><a class="facebook" href="https://www.facebook.com/derron.yu.727"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.5 2 2 6.5 2 12c0 5 3.7 9.1 8.4 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.3v7C18.3 21.1 22 17 22 12c0-5.5-4.5-10-10-10z"/></svg><span class="screen-reader-text">Facebook</span></a></li>
-    <li><a class="linkedin" href="https://www.linkedin.com/in/derron-yu/"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19.7 3H4.3C3.58 3 3 3.58 3 4.3v15.4c0 .72.58 1.3 1.3 1.3h15.4c.72 0 1.3-.58 1.3-1.3V4.3c0-.72-.58-1.3-1.3-1.3zM8.34 18.34H5.67V9.75h2.67v8.59zM7 8.57a1.55 1.55 0 1 1 0-3.1 1.55 1.55 0 0 1 0 3.1zm11.34 9.77h-2.67v-4.18c0-1-.02-2.28-1.39-2.28-1.39 0-1.6 1.09-1.6 2.21v4.25h-2.67V9.75h2.56v1.17h.04c.36-.68 1.23-1.39 2.53-1.39 2.7 0 3.2 1.78 3.2 4.09v4.72z"/></svg><span class="screen-reader-text">LinkedIn</span></a></li>
-    <li><a href="mailto:derron-nis@hotmail.com"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 5H5a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm.5 12a.5.5 0 0 1-.5.5H5a.5.5 0 0 1-.5-.5V9.8l7.5 5.6 7.5-5.6V17zm0-9.1L12 13.6 4.5 7.9V7a.5.5 0 0 1 .5-.5h14a.5.5 0 0 1 .5.5v.9z"/></svg><span class="screen-reader-text">Mail</span></a></li>
-  </ul>
-</article>
+  <figure class="home-portrait">
+    <img src="<%= site_path("/images/derron-yu.jpg") %>" width="1000" height="1000" alt="Derron Yu smiling outdoors">
+  </figure>
+</section>
+
+<section class="proof-grid site-shell" aria-label="Professional background">
+  <article>
+    <h2>Rotman School of Management</h2>
+    <p>Master of Finance graduate</p>
+  </article>
+  <article>
+    <h2>Guidehouse Case Competition</h2>
+    <p>Top-three finalist, 2024</p>
+  </article>
+  <article>
+    <h2>University Health Network</h2>
+    <p>Former financial analyst</p>
+  </article>
+</section>
+
+<section class="home-work site-shell">
+  <div class="section-heading">
+    <h2>Work</h2>
+    <a href="<%= site_path("/case-competitions/") %>">All work</a>
+  </div>
+
+  <div class="project-grid">
+    <a class="project-card project-card--aubergine" href="<%= site_path("/case-competitions/#guidehouse") %>">
+      <span class="project-card__meta">Strategy · 2024</span>
+      <h3>Guidehouse Case Competition</h3>
+      <p>Evaluated a strategy for attracting data centres while balancing grid capacity, economic growth, and decarbonization.</p>
+      <span class="project-card__link">Read case study <span aria-hidden="true">↗</span></span>
+    </a>
+
+    <a class="project-card project-card--citron" href="<%= site_path("/case-competitions/#rpmc") %>">
+      <span class="project-card__meta">Markets · 2024</span>
+      <h3>Rotman Portfolio Management Competition</h3>
+      <p>Managed a $1 million simulated portfolio using market analysis and active risk management.</p>
+      <span class="project-card__link">Read case study <span aria-hidden="true">↗</span></span>
+    </a>
+
+    <a class="project-card project-card--lake" href="<%= site_path("/papers/#social-distancing") %>">
+      <span class="project-card__meta">Research · 2021</span>
+      <h3>Social-distancing policy and mobility</h3>
+      <p>Compared policy effects across Canadian provinces using difference-in-differences analysis.</p>
+      <span class="project-card__link">Read research <span aria-hidden="true">↗</span></span>
+    </a>
+  </div>
+</section>
+
+<section class="home-profile site-shell">
+  <h2>Background</h2>
+  <div class="home-profile__body">
+    <p>My background in Economics, International Relations, and Statistics shapes how I evaluate financial systems. I’m interested in how markets connect to policy, sustainability, and long-term institutional decisions.</p>
+    <p>At University Health Network, I managed multi-million-dollar research grants and clinical-trial budgets. I have also worked on ESG and impact-investing cases, consulted for sustainability-focused organizations, and co-founded a mental-health nonprofit during the pandemic.</p>
+    <div class="text-links">
+      <a href="<%= site_path("/skills/") %>">Expertise</a>
+      <a href="<%= site_path("/papers/") %>">Research</a>
+      <a href="https://www.linkedin.com/in/derron-yu/">LinkedIn</a>
+    </div>
+  </div>
+</section>
