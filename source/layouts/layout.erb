@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title><%= current_page.data.title || "Derron Yu – Welcome To My Website!" %></title>
+    <meta name="description" content="Derron Yu's personal website covering finance, sustainable investing, research, and case competitions.">
+    <%= stylesheet_link_tag "site" %>
+    <%= javascript_include_tag "site", defer: true %>
+  </head>
+  <body class="<%= current_page.data.body_class %>">
+    <a class="skip-link" href="#content">Skip to content</a>
+    <header class="site-header">
+      <div class="wide header-inner">
+        <a class="site-title" href="/">Derron Yu</a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-navigation" aria-label="Open menu">
+          <span></span><span></span>
+        </button>
+        <nav id="site-navigation" class="site-navigation" aria-label="Main navigation">
+          <button class="menu-close" type="button" aria-label="Close menu">×</button>
+          <ul>
+            <li><a href="/skills/">Skills</a></li>
+            <li><a href="/papers/">Papers</a></li>
+            <li><a href="/case-competitions/">Case Competitions</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="content">
+      <header class="page-heading"><h1><%= current_page.data.heading %></h1></header>
+      <%= yield %>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wide footer-inner">
+        <div class="footer-brand">
+          <a class="site-title" href="/">Derron Yu</a>
+          <p>Welcome To My Website!</p>
+        </div>
+        <nav class="footer-navigation" aria-label="Footer navigation">
+          <ul>
+            <li><a href="/skills/">Skills</a></li>
+            <li><a href="/papers/">Papers</a></li>
+            <li><a href="/case-competitions/">Case Competitions</a></li>
+          </ul>
+        </nav>
+      </div>
+    </footer>
+  </body>
+</html>

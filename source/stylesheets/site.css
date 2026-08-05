@@ -1,0 +1,214 @@
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/inter.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Cardo";
+  src: url("/fonts/cardo.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --background: #f9f9f9;
+  --foreground: #111;
+  --wide: 1075.2px;
+  --content: 620px;
+  --flow: 1.2rem;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: "Inter", sans-serif;
+  font-size: 16.8px;
+  font-weight: 400;
+  line-height: 1.55;
+}
+
+a { color: inherit; text-underline-offset: .15em; }
+img { display: block; max-width: 100%; height: auto; }
+
+.wide { width: min(var(--wide), calc(100% - 40px)); margin-inline: auto; }
+.content { width: min(var(--content), calc(100% - 40px)); margin-inline: auto; }
+
+.skip-link {
+  position: fixed;
+  z-index: 100;
+  left: 1rem;
+  top: 1rem;
+  padding: .65rem 1rem;
+  background: #111;
+  color: #fff;
+  transform: translateY(-180%);
+}
+.skip-link:focus { transform: translateY(0); }
+
+.site-header { height: 69.76px; }
+.header-inner {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.site-title {
+  font-size: 19.2px;
+  font-weight: 600;
+  line-height: 1.55;
+  text-decoration: none;
+}
+.site-navigation ul,
+.footer-navigation ul {
+  display: flex;
+  gap: 24px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.site-navigation a { font-weight: 500; text-decoration: none; }
+.site-navigation a:hover,
+.footer-navigation a:hover { text-decoration: underline; }
+.menu-toggle,
+.menu-close { display: none; }
+
+main { margin-top: 19.2px; }
+.page-heading {
+  width: min(var(--content), calc(100% - 40px));
+  margin: 0 auto;
+  padding-top: 121.6px;
+  padding-bottom: 57.6px;
+  text-align: center;
+}
+h1, h2, h3, h4 {
+  font-family: "Cardo", serif;
+  font-weight: 400;
+}
+h1 { margin: 0; font-size: 52.3168px; line-height: 1.15; }
+h3 { margin: 3rem 0 1.2rem; font-size: 29.6px; line-height: 1.2; }
+h4 { margin: 1.2rem 0; font-size: 24px; line-height: 1.2; }
+
+.entry > * { margin-top: 0; margin-bottom: var(--flow); }
+.entry ul { padding-left: 1.1em; }
+.entry li { margin: 0; }
+.entry strong { font-weight: 700; }
+
+.home-entry { width: 100%; }
+.portrait { width: min(var(--wide), calc(100% - 40px)); margin: 0 auto; }
+.portrait img { width: 100%; aspect-ratio: 1; object-fit: cover; }
+.portrait figcaption {
+  width: min(512px, calc(100% - 40px));
+  margin: 31px auto 0;
+  font-size: 13.2px;
+  line-height: 1.48;
+  color: #5a5a5a;
+}
+.portrait figcaption p { margin: 0 0 20px; }
+.social-links {
+  display: flex;
+  gap: 18px;
+  width: min(var(--content), calc(100% - 40px));
+  margin: 50px auto 0;
+  padding: 0;
+  list-style: none;
+  justify-content: flex-start;
+}
+.social-links a {
+  display: grid;
+  place-items: center;
+  width: 54px;
+  height: 54px;
+  border-radius: 999px;
+  background: #eee;
+  text-decoration: none;
+}
+.social-links .facebook { background: #2677ef; color: white; }
+.social-links .linkedin { background: #2670bc; color: white; }
+.social-links svg { width: 32px; height: 32px; fill: currentColor; }
+.screen-reader-text {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.paper-title { margin-bottom: 19.2px; }
+.papers .entry { display: flow-root; padding-top: 19.2px; }
+.file-links { display: flex; align-items: center; gap: 24px; min-height: 34.265625px; font-size: 13.44px; }
+.file-links a:only-child { margin-left: 14px; }
+
+.case-entry h3:first-child { margin-top: 0; }
+.case-entry { display: flow-root; padding-top: 19.2px; }
+.case-entry figure { width: 100%; margin: 0 0 19.2px; }
+.case-entry .emoji { display: inline; width: 1em; height: 1em; vertical-align: -.12em; }
+
+.site-footer { margin-top: 19.2px; padding: 50px 0; min-height: 323px; }
+.footer-inner { display: grid; grid-template-columns: 30% 1fr 50%; }
+.footer-brand { grid-column: 1; }
+.footer-brand p { margin-top: 16px; color: #5a5a5a; font-size: 13.44px; }
+.footer-navigation { grid-column: 3; }
+.footer-navigation ul { flex-direction: column; gap: 12px; font-size: 13.44px; }
+.home .footer-navigation ul { flex-direction: row; justify-content: flex-end; gap: 24px; font-size: 16.8px; font-weight: 500; }
+.home .site-footer { margin-top: 14px; }
+
+@media (max-width: 700px) {
+  .wide, .content, .portrait { width: 84%; }
+  .site-header { height: 64px; }
+  .site-title { font-size: 14.3794px; line-height: 1.55; }
+  .menu-toggle {
+    display: grid;
+    gap: 6px;
+    width: 24px;
+    height: 24px;
+    padding: 4px 0;
+    border: 0;
+    background: transparent;
+  }
+  .menu-toggle span { height: 1.5px; background: currentColor; width: 24px; }
+  .site-navigation {
+    position: fixed;
+    z-index: 90;
+    inset: 0;
+    display: none;
+    background: var(--background);
+    padding: 90px 32px 32px;
+  }
+  .site-navigation.is-open { display: block; }
+  .site-navigation ul { flex-direction: column; gap: 24px; font-size: 24px; }
+  .menu-close {
+    display: block;
+    position: absolute;
+    top: 18px;
+    right: 23px;
+    border: 0;
+    background: transparent;
+    font-size: 36px;
+    line-height: 1;
+  }
+  main { margin-top: 19.2px; }
+  .page-heading { width: 84%; padding-top: 50.390625px; padding-bottom: 30.875px; }
+  h1 { font-size: 40.8981px; }
+  h3 { font-size: 22.7769px; }
+  h4 { font-size: 18.1369px; }
+  .portrait figcaption { width: 100%; padding-top: 19.84px; font-size: 12.8px; line-height: 1.55; margin-top: 6.4px; }
+  .social-links { width: 84%; }
+  .file-links.has-name { min-height: 55.09375px; }
+  .site-footer { margin-top: 19.2px; min-height: auto; padding: 31.2px 0; }
+  .footer-inner { display: grid; grid-template-columns: 1fr; gap: 57.6px; }
+  .footer-brand, .footer-navigation { grid-column: 1; }
+  .footer-brand .site-title { font-size: 16.8px; line-height: 1.55; }
+  .footer-brand p { margin-top: 19.2px; margin-bottom: 0; font-size: 14.4px; line-height: 1.55; }
+  .footer-navigation ul,
+  .home .footer-navigation ul { flex-direction: column; align-items: flex-start; gap: 16px; font-size: 14.4px; line-height: 1.55; }
+}

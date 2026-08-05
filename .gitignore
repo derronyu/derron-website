@@ -1,0 +1,4 @@
+/.bundle/
+/build/
+/vendor/
+.DS_Store
