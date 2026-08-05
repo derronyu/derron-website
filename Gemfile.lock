@@ -24,6 +24,7 @@ GEM
     fast_blank (1.0.1)
     fastimage (2.4.1)
     ffi (1.17.4-arm64-darwin)
+    ffi (1.17.4-x86_64-linux-gnu)
     haml (5.2.2)
       temple (>= 0.8.0)
       tilt
@@ -105,6 +106,7 @@ GEM
 
 PLATFORMS
   arm64-darwin-25
+  x86_64-linux
 
 DEPENDENCIES
   base64 (~> 0.3)
