@@ -1,0 +1,108 @@
+<p align="center">
+  <img src="source/favicon.svg" width="110" alt="Derron Yu geometric D and inverted-triangle brand mark">
+</p>
+
+<h1 align="center">DERRON YU</h1>
+
+<p align="center">
+  A portfolio for work across investment strategy, markets, policy, and sustainable growth.
+</p>
+
+<p align="center">
+  <a href="https://deronyu.com/">View the website</a>
+  &nbsp;·&nbsp;
+  <a href="docs/BRAND_GUIDELINES.md">Brand guidelines</a>
+</p>
+
+---
+
+## About
+
+This repository contains Derron Yu's personal portfolio. The site presents professional experience, selected competition work, and academic research through an editorial system built around clear evidence and direct language.
+
+The visual identity pairs a warm paper canvas with strong rules, oversized serif typography, a restrained color system, and the custom D-and-triangle brand mark.
+
+## Brand system
+
+The identity is grounded in **Analytical Optimism**: rigorous thinking presented with clarity, warmth, and momentum.
+
+| Token | Hex | Use |
+| --- | --- | --- |
+| Paper | `#F2EAD3` | Primary canvas |
+| Soft Paper | `#FBF7EC` | Reading surfaces |
+| Ink | `#17231C` | Text, borders, and dark sections |
+| Moss | `#315843` | Finance and sustainability |
+| Signal Coral | `#F06F4F` | Actions and key emphasis |
+| Citron | `#DDEB72` | Highlights and selected states |
+| Aubergine | `#75485D` | Research and editorial work |
+| Lake | `#5573A9` | Strategy and technology |
+
+The full identity rules—including voice, typography, layout, photography, accessibility, and mark usage—are documented in the [brand guidelines](docs/BRAND_GUIDELINES.md).
+
+## Site structure
+
+- **Home** — positioning, portrait, selected work, and professional background
+- **Expertise** — analytical, research, and communication capabilities
+- **Research** — five long-form academic papers with PDF downloads
+- **Work** — portfolio management, infrastructure strategy, and venture-development cases
+
+Long-form Research and Work content is authored in Markdown with ERB helpers for base-path-safe asset links.
+
+## Technology
+
+- [Middleman](https://middlemanapp.com/) static-site generator
+- Ruby 3.4
+- Semantic HTML, custom CSS, and vanilla JavaScript
+- Local Inter and Cardo webfonts
+- GitHub Actions and GitHub Pages
+
+## Local development
+
+Install dependencies:
+
+```sh
+bundle install
+```
+
+Start the development server at `http://localhost:4174`:
+
+```sh
+bundle exec middleman server
+```
+
+Run the test suite:
+
+```sh
+bundle exec ruby -Itest test/site_test.rb
+```
+
+Create a production build using the GitHub Pages base path:
+
+```sh
+BASE_PATH=/derron-website bundle exec middleman build --clean
+```
+
+Generated files are written to `build/`.
+
+## Project layout
+
+```text
+source/
+├── layouts/              Shared page shell
+├── stylesheets/          Brand tokens and responsive visual system
+├── javascripts/          Accessible mobile-navigation behavior
+├── images/               Portrait and project artifacts
+├── index.html.erb        Homepage
+├── skills/               Expertise page
+├── papers/               Research page and downloadable PDFs
+└── case-competitions/    Work case studies
+```
+
+## Deployment
+
+Pushes to `main` run the Pages workflow in [`.github/workflows/pages.yml`](.github/workflows/pages.yml). The workflow installs Ruby dependencies, runs the test suite, builds with the configured Pages base path, and deploys the generated artifact.
+
+## Contact
+
+- [LinkedIn](https://www.linkedin.com/in/derron-yu/)
+- [Email](mailto:derron-nis@hotmail.com)
