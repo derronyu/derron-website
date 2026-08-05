@@ -1,4 +1,5 @@
 require "minitest/autorun"
+require "open3"
 
 class SiteTest < Minitest::Test
   ROOT = File.expand_path("..", __dir__)
@@ -54,5 +55,24 @@ class SiteTest < Minitest::Test
     ].each do |path|
       assert File.file?(File.join(ROOT, path)), "expected #{path} to exist"
     end
+  end
+
+  def test_production_build_honors_a_hosting_base_path
+    stdout, stderr, status = Open3.capture3(
+      { "BASE_PATH" => "/derron-website" },
+      "bundle", "exec", "middleman", "build",
+      chdir: ROOT
+    )
+
+    assert status.success?, "build failed:\n#{stdout}\n#{stderr}"
+
+    homepage = read("build/index.html")
+    stylesheet = read("build/stylesheets/site.css")
+    papers = read("build/papers/index.html")
+
+    assert_includes homepage, 'href="/derron-website/skills/"'
+    assert_includes homepage, 'src="/derron-website/images/derron-yu.jpg"'
+    assert_includes stylesheet, 'url("../fonts/inter.woff2")'
+    assert_includes papers, 'href="/derron-website/papers/ECO446-FinalWorkingPaper-DerronYu.pdf"'
   end
 end

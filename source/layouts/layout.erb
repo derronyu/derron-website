@@ -12,16 +12,16 @@
     <a class="skip-link" href="#content">Skip to content</a>
     <header class="site-header">
       <div class="wide header-inner">
-        <a class="site-title" href="/">Derron Yu</a>
+        <a class="site-title" href="<%= site_path("/") %>">Derron Yu</a>
         <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-navigation" aria-label="Open menu">
           <span></span><span></span>
         </button>
         <nav id="site-navigation" class="site-navigation" aria-label="Main navigation">
           <button class="menu-close" type="button" aria-label="Close menu">×</button>
           <ul>
-            <li><a href="/skills/">Skills</a></li>
-            <li><a href="/papers/">Papers</a></li>
-            <li><a href="/case-competitions/">Case Competitions</a></li>
+            <li><a href="<%= site_path("/skills/") %>">Skills</a></li>
+            <li><a href="<%= site_path("/papers/") %>">Papers</a></li>
+            <li><a href="<%= site_path("/case-competitions/") %>">Case Competitions</a></li>
           </ul>
         </nav>
       </div>
@@ -35,14 +35,14 @@
     <footer class="site-footer">
       <div class="wide footer-inner">
         <div class="footer-brand">
-          <a class="site-title" href="/">Derron Yu</a>
+          <a class="site-title" href="<%= site_path("/") %>">Derron Yu</a>
           <p>Welcome To My Website!</p>
         </div>
         <nav class="footer-navigation" aria-label="Footer navigation">
           <ul>
-            <li><a href="/skills/">Skills</a></li>
-            <li><a href="/papers/">Papers</a></li>
-            <li><a href="/case-competitions/">Case Competitions</a></li>
+            <li><a href="<%= site_path("/skills/") %>">Skills</a></li>
+            <li><a href="<%= site_path("/papers/") %>">Papers</a></li>
+            <li><a href="<%= site_path("/case-competitions/") %>">Case Competitions</a></li>
           </ul>
         </nav>
       </div>
