@@ -58,6 +58,21 @@ Long-form Research and Work content is authored in Markdown with ERB helpers for
 
 ## Local development
 
+Install Homebrew (Mac):
+
+```
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
+Install Ruby:
+
+```
+brew install rbenv
+rbenv init
+# restart your terminal
+rbenv install 3.4
+```
+
 Install dependencies:
 
 ```sh
