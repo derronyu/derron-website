@@ -1,0 +1,19 @@
+<section class="home-work page-section site-shell" id="research">
+  <div class="section-heading">
+    <h2>Research</h2>
+  </div>
+
+  <ul class="highlight-list">
+    <% home.research.each do |item| %>
+    <li>
+      <a class="highlight-row highlight-row--no-icon" href="<%= site_path(item.href) %>">
+        <span class="highlight-row__body">
+          <span class="highlight-row__title"><%= item.title %></span>
+          <span class="highlight-row__meta"><%= item.meta %></span>
+        </span>
+        <span class="highlight-row__arrow" aria-hidden="true">↗</span>
+      </a>
+    </li>
+    <% end %>
+  </ul>
+</section>

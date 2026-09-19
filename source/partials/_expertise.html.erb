@@ -1,0 +1,19 @@
+<section class="home-work page-section site-shell" id="expertise">
+  <div class="section-heading">
+    <h2>Expertise</h2>
+  </div>
+  <p><%= home.expertise.intro %></p>
+</section>
+
+<section class="capability-grid page-section site-shell">
+  <% home.expertise.capabilities.each do |cap| %>
+  <article class="capability-card capability-card--<%= cap.variant %>">
+    <h2><%= cap.name %></h2>
+    <ul>
+      <% cap.items.each do |item| %>
+      <li><%= item %></li>
+      <% end %>
+    </ul>
+  </article>
+  <% end %>
+</section>

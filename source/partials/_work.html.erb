@@ -1,0 +1,20 @@
+<section class="home-work page-section site-shell" id="work">
+  <div class="section-heading">
+    <h2>Work</h2>
+  </div>
+
+  <ul class="highlight-list">
+    <% home.work.each do |item| %>
+    <li>
+      <a class="highlight-row" href="<%= site_path(item.href) %>">
+        <span class="highlight-row__icon"><img src="<%= site_path(item.icon) %>" alt="" loading="lazy"></span>
+        <span class="highlight-row__body">
+          <span class="highlight-row__title"><%= item.title %></span>
+          <span class="highlight-row__meta"><%= item.meta %></span>
+        </span>
+        <span class="highlight-row__arrow" aria-hidden="true">↗</span>
+      </a>
+    </li>
+    <% end %>
+  </ul>
+</section>

@@ -1,0 +1,25 @@
+---
+title: Derron Yu — Finance and Research
+body_class: home
+---
+
+<% home = data.home %>
+
+<section class="home-hero site-shell">
+  <div class="home-hero__copy">
+    <h1><%= home.hero.title_pre %><span class="home-hero__contrast"><%= home.hero.title_contrast %></span></h1>
+    <p><%= home.hero.intro %></p>
+    <div class="home-hero__links">
+      <a href="#work">View my work</a>
+      <a href="mailto:derron-nis@hotmail.com">Email me</a>
+    </div>
+  </div>
+
+  <figure class="home-portrait">
+    <img src="<%= site_path(home.hero.portrait) %>" width="1000" height="1000" alt="<%= home.hero.portrait_alt %>">
+  </figure>
+</section>
+
+<% home.sections.each do |section| %>
+<%= partial "partials/#{section}", locals: { home: home } %>
+<% end %>

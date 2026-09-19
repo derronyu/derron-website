@@ -41,12 +41,17 @@ The full identity rules—including voice, typography, layout, photography, acce
 
 ## Site structure
 
-- **Home** — positioning, portrait, selected work, and professional background
-- **Expertise** — analytical, research, and communication capabilities
-- **Research** — five long-form academic papers with PDF downloads
-- **Work** — portfolio management, infrastructure strategy, and venture-development cases
+The home page is a single scrolling page (`source/index.html.md.erb`) built from `data/home.yml`, with each section rendered by a partial in `source/partials/`:
 
-Long-form Research and Work content is authored in Markdown with ERB helpers for base-path-safe asset links.
+- **Hero** — positioning and portrait
+- **Expertise** (`#expertise`) — analytical, research, and communication capabilities, plus experience history
+- **Work** (`#work`) — portfolio management, infrastructure strategy, and venture-development cases, listed as compact linked rows
+- **Research** (`#research`) — five academic papers, listed as compact linked rows
+- **Background** — closing bio and contact links
+
+Section order (and which one gets bottom padding) is controlled by the `sections:` list at the top of `data/home.yml`.
+
+Each Work and Research row links out to its own detail page under `source/work/<slug>/` or `source/papers/<slug>/`, authored in Markdown with ERB helpers for base-path-safe asset links, and wrapped in the shared `.prose-page` style.
 
 ## Technology
 
@@ -102,15 +107,18 @@ Generated files are written to `build/`.
 ## Project layout
 
 ```text
+data/
+└── home.yml               Home page content (hero, expertise, work, research, background)
+
 source/
-├── layouts/              Shared page shell
-├── stylesheets/          Brand tokens and responsive visual system
-├── javascripts/          Accessible mobile-navigation behavior
-├── images/               Portrait and project artifacts
-├── index.html.erb        Homepage
-├── skills/               Expertise page
-├── papers/               Research page and downloadable PDFs
-└── case-competitions/    Work case studies
+├── layouts/               Shared page shell
+├── partials/              One partial per home-page section (_work.html.erb, _research.html.erb, …)
+├── stylesheets/           Brand tokens and responsive visual system
+├── javascripts/           Accessible mobile-navigation behavior
+├── images/                Portrait and project artifacts
+├── index.html.md.erb      Homepage, assembled from data/home.yml + partials
+├── work/<slug>/           One detail page per case competition
+└── papers/                Downloadable PDFs + one detail page per paper (papers/<slug>/)
 ```
 
 ## Deployment

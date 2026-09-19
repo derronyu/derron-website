@@ -1,0 +1,117 @@
+# Drives the home page (source/index.html.md.erb). Each top-level key below
+# is rendered by the matching partial in source/partials/_<key>.html.erb.
+
+hero:
+  title_pre: "I make complex "        # plain text before the accent span
+  title_contrast: "decisions clearer." # wrapped in <span class="home-hero__contrast">, renders italic/coral
+  intro: "I’m Derron Yu, a Master of Finance graduate of the Rotman School of Management working across investment strategy, markets, policy, and sustainable growth."
+  portrait: /images/derron-yu.jpg      # path under source/, passed through site_path()
+  portrait_alt: "Derron Yu smiling outdoors"
+
+# Reorder these sections to change the order of the home page.
+# Names must match a partial in source/partials (without the leading _).
+# The last one in this list gets the page's bottom padding (see .page-section:last-of-type).
+sections:
+- background
+- work
+- research
+- experience
+- expertise
+
+# Capability cards + intro paragraph rendered by _expertise.html.erb.
+expertise:
+  intro: "I combine quantitative analysis with policy research and clear communication. These capabilities have been developed through finance, healthcare, academic research, and competition work."
+  # variant: moss (dark green #315843) | paper (cream #fbf7ec) | coral (orange #f06f4f)
+  # Defined in source/stylesheets/site.css as .capability-card--<variant>. Exactly 3 cards expected (3-column grid).
+  capabilities:
+    - name: Analysis
+      variant: moss # dark green
+      items:
+        - Financial modelling
+        - Portfolio construction
+        - Market and security analysis
+        - Risk assessment
+        - Microsoft Excel
+        - Python, R, and Stata
+    - name: Research
+      variant: paper # cream
+      items:
+        - Econometrics and statistics
+        - Policy analysis
+        - Qualitative research
+        - Data visualization
+        - ArcMap and ArcGIS
+        - Google Analytics
+    - name: Communication
+      variant: coral # orange
+      items:
+        - Technical writing
+        - Executive presentations
+        - Stakeholder collaboration
+        - Case development
+        - Digital marketing
+        - WordPress and Eventbrite
+
+# Job history rendered by _experience.html.erb as a bordered list, oldest last.
+experience:
+  - org: University Health Network
+    role: Financial Analyst
+    body: "Managed multi-million-dollar research grants and clinical-trial budgets, working with investigators and administrators to support financial sustainability in healthcare research."
+  - org: Rotman School of Management
+    role: Master of Finance graduate
+    body: "Developing practical experience in investment strategy, portfolio management, market analysis, valuation, and risk."
+
+# Rendered by _work.html.erb as rows with a small square icon on the left.
+# href points at each item's own detail page (source/work/<slug>/index.html.md.erb).
+# These pages will support markdown or raw HTML.
+# icon is required here (44x44, cropped).
+work:
+  - title: "Guidehouse Case Competition — Finalist"
+    meta: "Strategy · November 2024"
+    href: /work/guidehouse/
+    icon: /images/guidehouse-team.jpeg
+  - title: "Rotman Portfolio Management Competition"
+    meta: "Markets · October–December 2024"
+    href: /work/rpmc/
+    icon: /images/rpmc.png
+  - title: "Sun Life Capital Management Case Competition"
+    meta: "Markets · September 2024"
+    href: /work/sun-life/
+    icon: /images/sun-life.png
+  - title: "Problem Hunt Kickoff — Koru"
+    meta: "Venture studio · November 2024"
+    href: /work/koru/
+    icon: /images/koru.png
+
+# Rendered by _research.html.erb as icon-less rows.
+# href points at each paper's detail page (source/papers/<slug>/index.html.md.erb).
+# These pages support markdown and raw HTML.
+research:
+  - title: "Effectiveness of Social Distancing Policies"
+    meta: "Public economics · 2021"
+    href: /papers/social-distancing/
+  - title: "Energy Security and Shifts in the Balance of Power"
+    meta: "Energy security · 2020"
+    href: /papers/energy-security/
+  - title: "A New Age of Hong Kong Nationalism"
+    meta: "International relations · 2019–2020"
+    href: /papers/hk-nationalism/
+  - title: "“One Country, Two Systems” in Late-Twentieth-Century Hong Kong"
+    meta: "Hong Kong history · 2020"
+    href: /papers/one-country-two-systems/
+  - title: "Modernization Theory and the Kennedy Administration"
+    meta: "American foreign relations · 2020"
+    href: /papers/modernization-theory/
+
+# Closing bio section, rendered by _background.html.erb.
+background:
+  paragraphs:
+    - "My background in Economics, International Relations, and Statistics shapes how I evaluate financial systems. I’m interested in how markets connect to policy, sustainability, and long-term institutional decisions."
+    - "At University Health Network, I managed multi-million-dollar research grants and clinical-trial budgets. I have also worked on ESG and impact-investing cases, consulted for sustainability-focused organizations, and co-founded a mental-health nonprofit during the pandemic."
+  links: # href can be an in-page anchor ("#expertise") or a full external URL. Note that headers get anchors added automatically which you can get from inspecting element to get the `id`.
+    - label: Expertise
+      href: "#expertise"
+    - label: Research
+      href: "#research"
+    - label: LinkedIn
+      href: "https://www.linkedin.com/in/derron-yu/"

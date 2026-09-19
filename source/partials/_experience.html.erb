@@ -1,0 +1,12 @@
+<section class="experience page-section site-shell">
+  <h2>Experience</h2>
+  <div class="experience-list">
+    <% home.experience.each do |job| %>
+    <article>
+      <h3><%= job.org %></h3>
+      <p class="experience-list__role"><%= job.role %></p>
+      <p><%= job.body %></p>
+    </article>
+    <% end %>
+  </div>
+</section>

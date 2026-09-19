@@ -1,0 +1,13 @@
+<section class="home-profile page-section site-shell">
+  <h2>Background</h2>
+  <div class="home-profile__body">
+    <% home.background.paragraphs.each do |p| %>
+    <p><%= p %></p>
+    <% end %>
+    <div class="text-links">
+      <% home.background.links.each do |link| %>
+      <a href="<%= link.href %>"><%= link.label %></a>
+      <% end %>
+    </div>
+  </div>
+</section>
